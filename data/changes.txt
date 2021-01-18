@@ -1,0 +1,25 @@
+# add a playlist, fist number is a userid, following are songid(s)
+# id will be auto generated
+# user_id is a foreign key  
+# one user can have multiple playlists.  
+$ Tow playlists can be the same except the unique key (Need discuss this)
+#new,5,4,31
+
+# remove a playlist by its id 
+# number is the id (primary key) of the playlist
+#remove,4
+
+# add_song.
+# first number is the id (primary key) of the playlist, second number is the song id 
+# add one song at a time?
+add_song,5,16
+
+# example
+#   {
+#      "id" : "1",            # auto generated 
+#      "user_id" : "2",
+#      "song_ids" : [
+#        "8",
+#        "32"
+#      ]
+#    }

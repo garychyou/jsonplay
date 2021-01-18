@@ -1,0 +1,34 @@
+Performance:
+1. to handle very large input files
+  JSONParser load everything into memory.  this is not scalable.  
+  The right way is to use a stream parser, like the SAX parser for xml file.
+  
+ 
+2. to handle large change file.  when streaming in the file line bye line, don't collect into a list.
+   Instead, as soon as one line is processed, kick out the operation.
+
+   parallel streams are even better.   
+
+
+3. Known issue,
+There are should be validation of the input changes.
+For example, adding a non-exist user_id, or a non-exist song_id, should not rejected. 
+In the Jason file, there are users data and songs data. These data can be used to do the validation.
+
+Another example,
+if a user or a song is deleted, it should cascade to the playlist.  
+
+
+4. How to run it.
+ 1) if you have Eclipse 
+   You load this mvn project and run it in Eclipse.
+   You need set one argument: baseDir
+ 2).  create a java command line 
+ 3).  use some installer  
+
+
+5. Misc.
+To read a json file:
+ on linux: jq . output.json
+
+ 
